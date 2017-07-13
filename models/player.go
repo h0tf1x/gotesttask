@@ -4,7 +4,7 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-type User struct {
+type Player struct {
 	gorm.Model
-	Balance int `json:"balance`
+	Balance int `json:"balance"`
 }

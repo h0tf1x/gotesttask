@@ -5,7 +5,6 @@ import (
 
 	"log"
 
-	"github.com/h0tf1x/gotesttask/models"
 	"github.com/h0tf1x/gotesttask/response"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
@@ -20,8 +19,7 @@ func Database(ctx context.Context) {
 		ctx.JSON(response.NewErrorResponse("Failed connect to database"))
 		return
 	}
-
-	db.AutoMigrate(&models.User{}, &models.Tournament{}, &models.Team{})
+	db.LogMode(true)
 
 	defer db.Close()
 

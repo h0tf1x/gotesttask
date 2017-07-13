@@ -6,8 +6,6 @@ import (
 
 type Team struct {
 	gorm.Model
-	User       User
+	Users      []Player
 	Tournament Tournament
-	Backer     bool
-	Amount     int
 }
